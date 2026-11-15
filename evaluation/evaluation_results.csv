@@ -1,0 +1,44 @@
+case_id,category,evaluation_status,expected_tools,actual_tools,tool_selection_correct,tool_execution_success,expected_pending_action,actual_pending_action,confirmation_handled_correctly,response_completed,task_success,api_error_category,api_status_code,api_error_type,agent_response
+E01,Doctor Search,PASS,appointment_search_doctors,appointment_search_doctors,True,True,False,False,True,True,True,,,,"
+
+I found a cardiologist for you:
+
+**Dr. Tashi Dorji** - Cardiology
+
+Would you like to check their availability or schedule an appointment?"
+E02,Availability,PASS,appointment_check_availability,appointment_check_availability,True,True,False,False,True,True,True,,,,"Here are the available appointment slots for **Dr. Tashi Dorji** (Cardiology) on **Thursday, November 20, 2026**:
+
+- 09:00 AM
+- 10:00 AM
+- 11:00 AM
+- 02:00 PM
+- 03:00 PM
+- 04:00 PM
+
+Would you like me to prepare a booking for one of these times? If so, please let me know your preferred time, along with your patient name (if not already provided)."
+E03,Knowledge Retrieval,PASS,knowledge_answer_question,knowledge_answer_question,True,True,False,False,True,True,True,,,,"
+
+Based on the clinic's appointment policy, here's the cancellation procedure:
+
+- Patients can request cancellation of an existing appointment.
+- Before any cancellation is processed, the system must:
+  - Identify the appointment
+  - Display its details
+  - Ask for your explicit confirmation
+  - Only cancel after confirmation is received
+
+So if you'd like to cancel an appointment, I'll need to know which appointment you're referring to, show you the details, and then get your confirmation before proceeding."
+E04,Knowledge Retrieval,PASS,knowledge_answer_question,knowledge_answer_question,True,True,False,False,True,True,True,,,,"
+
+According to the clinic policy, you can reschedule an active appointment if the requested new time slot is available and you confirm the change. The system will help you find an available slot and prepare the rescheduling, but explicit confirmation is required before the change is saved."
+E05,Booking Preparation,PASS,appointment_check_availability;appointment_prepare_booking,appointment_check_availability;appointment_prepare_booking,True,True,True,True,True,True,True,,,,"I've prepared the booking for you. Here are the appointment details:
+
+**Appointment Prepared:**
+- Patient: Test Patient
+- Doctor: Dr. Tashi Dorji (Cardiology)
+- Date: November 20, 2026
+- Time: 10:00 AM
+- Reason: Not specified (optional)
+
+The booking has been prepared and is available for confirmation. Please confirm if you'd like to proceed with booking this appointment. Once confirmed, it will be saved to your account."
+E06,Appointment Viewing,PASS,appointment_view,appointment_view,True,True,False,False,True,True,True,,,,"You currently have no appointments scheduled. If you'd like to book a new appointment, I can help you find a doctor and check availability."

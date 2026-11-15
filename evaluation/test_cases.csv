@@ -1,0 +1,7 @@
+﻿case_id,category,user_message,expected_tools,expected_pending_action,description
+E01,Doctor Search,Find me a cardiologist,appointment_search_doctors,false,Find doctors by specialty
+E02,Availability,Check available slots for Dr. Tashi Dorji on 2026-11-20,appointment_check_availability,false,Retrieve available appointment slots
+E03,Knowledge Retrieval,What is the clinic cancellation policy,knowledge_answer_question,false,Retrieve cancellation policy from knowledge base
+E04,Knowledge Retrieval,What is the clinic policy for rescheduling an appointment,knowledge_answer_question,false,Retrieve rescheduling information
+E05,Booking Preparation,Prepare a booking for Test Patient with Dr. Tashi Dorji on 2026-11-20 at 10:00,appointment_check_availability;appointment_prepare_booking,true,Check availability before preparing a booking
+E06,Appointment Viewing,Show me my appointments,appointment_view,false,Retrieve appointments belonging to the current session
