@@ -1,0 +1,7 @@
+
+streamlit
+SQLAlchemy
+pandas
+openai
+scikit-learn
+python-dotenv
